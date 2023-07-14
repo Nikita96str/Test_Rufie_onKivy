@@ -1,0 +1,41 @@
+from kivy.app import App
+from kivy.uix.button import Button
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import Screen
+
+class MyApp(App):
+
+    def build(self):
+        h1 = BoxLayout()
+        v1 = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
+        btn1 = Button(text = 'first screen')
+        btn2 = Button(text = 'second screen')
+        btn1.on_press = reaction_1
+        btn2.on_press = reaction_2
+
+        v1.add_widget(btn1)
+        v1.add_widget(btn2)  
+        #h1.add_layout(v1)
+        return v1
+
+def reaction_1():
+    print('Reaction_1')
+
+def reaction_2():
+    print('Reaction_2')
+
+#class MyScreen(Screen):
+#    def __init__(self, **kwargs): 
+#       super().__init__(**kwargs):
+
+        # sm = ScreenManager()
+        # sm.add_widget(Screen1(name = 'scr1'))
+        # sm.add_widget(Screen2(name = 'scr2'))
+        # sm.add_widget(Screen3(name = 'scr3'))
+        # return sm
+
+# class ScrButton(App):
+#     def __init__():
+        
+app = MyApp()
+app.run()
