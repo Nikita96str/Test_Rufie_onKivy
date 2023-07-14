@@ -1,2 +1,2 @@
 # test_kivy
-mobile development library
+mobile development library for Python
